@@ -38,12 +38,14 @@ function PaymentForm() {
         if (!error) {
             try {
                 const { id } = paymentMethod
-                const response = await axios.post("http://localhost:4000/payments", {
+                const response = await axios.post("http://localhost:4000/payment", {
                     amount: 1000,
                     id
                 })
+                console.log(response)
 
                 if (response.data.success) {
+                    
                     console.log("Successful payment")
                     setSuccess(true)
                 }
