@@ -36,9 +36,23 @@ function PaymentForm() {
         }
     }
     return (
-        <div>
+        <>
+            {
+                !success ? <form onSubmit={handleSubmit}>
+                    <fieldset className='FormGroup'>
+                        <div className="FormRow">
+                            <CardElement options={CARD_OPTIONS} />
+                        </div>
+                    </fieldset>
+                    <button>Pay</button>
+                </form>
+                    :
+                    <div className="">
+                        <h2>You just bought a sweet spatula</h2>
+                    </div>
+            }
 
-        </div>
+        </>
     )
 }
 
